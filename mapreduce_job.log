@@ -1,0 +1,731 @@
+INFO Thread-5 org.apache.hadoop.mapreduce.Cluster - Failed to use org.apache.hadoop.mapred.YarnClientProtocolProvider due to error: 
+ java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+	at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+	at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+	at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	... 22 more
+INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.IOException: Cannot initialize Cluster. Please check your configuration for mapreduce.framework.name and the correspond server addresses.
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:116)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+	Suppressed: java.io.IOException: Failed to use org.apache.hadoop.mapred.YarnClientProtocolProvider due to error: 
+		at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:148)
+		... 12 more
+	Caused by: java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+		at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+		at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+		at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+		at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+		at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+		at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+		at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+		at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+		at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+		at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+		... 12 more
+	Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+		... 22 more
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.service.AbstractService - Service org.apache.hadoop.yarn.client.api.impl.YarnClientImpl failed in state INITED
+ java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+	at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+	at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+	at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	... 22 more
+INFO Thread-5 org.apache.hadoop.service.AbstractService - Service org.apache.hadoop.mapred.ResourceMgrDelegate failed in state INITED
+ java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+	at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+	at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+	at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	... 22 more
+INFO Thread-5 org.apache.hadoop.mapreduce.Cluster - Failed to use org.apache.hadoop.mapred.YarnClientProtocolProvider due to error: 
+ java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+	at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+	at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+	at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+	at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+	at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+	... 22 more
+INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.IOException: Cannot initialize Cluster. Please check your configuration for mapreduce.framework.name and the correspond server addresses.
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:116)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:109)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:102)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1540)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1536)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1536)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1564)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+	Suppressed: java.io.IOException: Failed to use org.apache.hadoop.mapred.YarnClientProtocolProvider due to error: 
+		at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:148)
+		... 12 more
+	Caused by: java.lang.IllegalArgumentException: java.net.UnknownHostException: slaver1.hdu.edu.cn
+		at org.apache.hadoop.security.SecurityUtil.buildTokenService(SecurityUtil.java:445)
+		at org.apache.hadoop.yarn.util.timeline.TimelineUtils.buildTimelineTokenService(TimelineUtils.java:163)
+		at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.serviceInit(YarnClientImpl.java:183)
+		at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+		at org.apache.hadoop.mapred.ResourceMgrDelegate.serviceInit(ResourceMgrDelegate.java:111)
+		at org.apache.hadoop.service.AbstractService.init(AbstractService.java:164)
+		at org.apache.hadoop.mapred.ResourceMgrDelegate.<init>(ResourceMgrDelegate.java:105)
+		at org.apache.hadoop.mapred.YARNRunner.<init>(YARNRunner.java:152)
+		at org.apache.hadoop.mapred.YarnClientProtocolProvider.create(YarnClientProtocolProvider.java:34)
+		at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:130)
+		... 12 more
+	Caused by: java.net.UnknownHostException: slaver1.hdu.edu.cn
+		... 22 more
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/apps/2.4.3.0-227/mapreduce/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/apps/2.4.3.0-227/mapreduce/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/apps/3.1.1.0-78/mapreduce/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/3.1.0.0-78/hadoop/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/usr/hdp/3.1.0.0-78/hadoop/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/usr/hdp/3.1.0.0-78/hadoop/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/usr/hdp/3.1.0.0-78/hadoop/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/usr/hdp/3.1.0.0-78/hadoop/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hadoop/yarn/local/filecache/10/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/apps/3.1.1.0-78/mapreduce/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File does not exist: hdfs://node1.ambari.com:8020/hdp/apps/3.1.1.0-78/mapreduce/mapreduce.tar.gz
+	at org.apache.hadoop.fs.Hdfs.getFileStatus(Hdfs.java:145)
+	at org.apache.hadoop.fs.AbstractFileSystem.resolvePath(AbstractFileSystem.java:488)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2226)
+	at org.apache.hadoop.fs.FileContext$25.next(FileContext.java:2222)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.resolve(FileContext.java:2228)
+	at org.apache.hadoop.fs.FileContext.resolvePath(FileContext.java:608)
+	at org.apache.hadoop.mapreduce.JobSubmitter.addMRFrameworkToDistributedCache(JobSubmitter.java:462)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:149)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0009
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Cleaning up the staging area /user/hdfs/.staging/job_1608606015619_0009
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ java.io.FileNotFoundException: File D:/qq/文档/981188718/FileRecv/DataOperate/DataOperate/target/DataOperate.jar does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.deprecatedGetFileStatus(RawLocalFileSystem.java:641)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileLinkStatusInternal(RawLocalFileSystem.java:930)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:631)
+	at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:454)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:386)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:2420)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:2386)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:2349)
+	at org.apache.hadoop.mapreduce.JobResourceUploader.copyJar(JobResourceUploader.java:763)
+	at org.apache.hadoop.mapreduce.JobResourceUploader.uploadJobJar(JobResourceUploader.java:450)
+	at org.apache.hadoop.mapreduce.JobResourceUploader.uploadResourcesInternal(JobResourceUploader.java:209)
+	at org.apache.hadoop.mapreduce.JobResourceUploader.uploadResources(JobResourceUploader.java:133)
+	at org.apache.hadoop.mapreduce.JobSubmitter.copyAndConfigureFiles(JobSubmitter.java:102)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:197)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0010
+ WARN Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Cleaning up the staging area /user/hdfs/.staging/job_1608606015619_0010
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ org.apache.hadoop.mapreduce.lib.input.InvalidInputException: Input path does not exist: hdfs://10.1.13.101:8020/user/addData/paper/add_paper_result2019-12-02
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:332)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(FileInputFormat.java:274)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getSplits(FileInputFormat.java:396)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeNewSplits(JobSubmitter.java:313)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeSplits(JobSubmitter.java:330)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:203)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0011
+ WARN Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0011
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+ INFO Thread-5 org.apache.hadoop.conf.Configuration - resource-types.xml not found
+ INFO Thread-5 org.apache.hadoop.yarn.util.resource.ResourceUtils - Unable to find 'resource-types.xml'.
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0011
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0011/
+ WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - dir is already exists !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob - prePaper got an error while submitting 
+ org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://10.1.13.101:8020/user/mysqlAddData/paper2020-12-22/prePaper already exists
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:164)
+	at org.apache.hadoop.mapreduce.JobSubmitter.checkSpecs(JobSubmitter.java:280)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:146)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit(ControlledJob.java:336)
+	at org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run(JobControl.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ WARN main org.apache.hadoop.hdfs.shortcircuit.DomainSocketFactory - The short-circuit local reads feature cannot be used because UNIX Domain sockets are not available on Windows.
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - mkdir dir success !
+ INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.jar is deprecated. Instead, use mapreduce.job.jar
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0012
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0012
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.conf.Configuration - resource-types.xml not found
+ INFO Thread-5 org.apache.hadoop.yarn.util.resource.ResourceUtils - Unable to find 'resource-types.xml'.
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0012
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0012/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0013
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0013
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0013
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0013/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0014
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0014
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0014
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0014/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0015
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0015
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0015
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0015/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0016
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0016
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0016
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0016/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0017
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0017
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0017
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0017/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0018
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0018
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0018
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0018/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0019
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 2
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:2
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0019
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0019
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0019/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0020
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0020
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0020
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0020/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0021
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0021
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0021
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0021/
+ INFO Thread-5 org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at node1.ambari.com/10.1.13.101:8050
+ INFO Thread-5 org.apache.hadoop.yarn.client.AHSProxy - Connecting to Application History server at node1.ambari.com/10.1.13.101:10200
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobResourceUploader - Disabling Erasure Coding for path: /user/hdfs/.staging/job_1608606015619_0022
+ INFO Thread-5 org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input files to process : 1
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-num-retries is deprecated. Instead, use hadoop.zk.num-retries
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-address is deprecated. Instead, use hadoop.zk.address
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-timeout-ms is deprecated. Instead, use hadoop.zk.timeout-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-acl is deprecated. Instead, use hadoop.zk.acl
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.zk-retry-interval-ms is deprecated. Instead, use hadoop.zk.retry-interval-ms
+ INFO Thread-5 org.apache.hadoop.conf.Configuration.deprecation - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1608606015619_0022
+ INFO Thread-5 org.apache.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+ INFO Thread-5 org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1608606015619_0022
+ INFO Thread-5 org.apache.hadoop.mapreduce.Job - The url to track the job: http://node1.ambari.com:8088/proxy/application_1608606015619_0022/
+ INFO main com.autoStep.paper.PaperDataProcessJobControl - move is success :hdfs://10.1.13.101:8020/user/mysqlAddData/paper2020-12-22/step7/part-r-00000	to	hdfs://10.1.13.101:8020/user/mysqlOut/expert/add_paper_expert2020-12-22
+ 
