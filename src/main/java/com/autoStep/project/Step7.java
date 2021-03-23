@@ -1,10 +1,10 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
 
 /**
  * 提取出项目专家关联表
@@ -18,6 +18,9 @@ public class Step7 {
 		protected void map(Object key, Text value, Mapper<Object, Text, Text, NullWritable>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
+			// step4输出信息格式：
+			// expertId、expertName、expertUnit、projectId、projectName、
+			// expertRole、source
 			String[] infos = value.toString().split("\t");
 			if(infos.length == 7){
 				if(infos[1].length() > 255){
@@ -26,6 +29,7 @@ public class Step7 {
 				if(infos[4].length() > 255){
 					infos[4] = infos[4].substring(0, 255);
 				}
+				// key为 expertId+expertName+expertRole+projectId+projectName
 				String result = "null" + "\t" + infos[0] + "\t" + infos[1] + "\t" + infos[5] + "\t" + infos[3] + "\t" + infos[4];
 				context.write(new Text(result.replace("'", "")), NullWritable.get());
 			}

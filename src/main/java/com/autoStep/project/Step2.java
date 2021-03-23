@@ -1,17 +1,16 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.structure.ExpertStructure;
+import com.structure.ProjectStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.structure.ExpertStructure;
-import com.structure.ProjectStructure;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -38,22 +37,31 @@ public class Step2 {
 				authorNameIndex = ProjectStructure.leader + authorNum*2;
 			}
 		}
+		// 输入的是expert表和上一步的输出文件
 		@Override
 		protected void map(Object key, Text value, Mapper<Object, Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
 			String[] infos = value.toString().split("\t");
+			// 根据数组长度判断读取的是哪一个文件（expert或者上一步的输出文件）
+			// 上一步的输出文件
+			// key为专家名+单位名
+			// value为输入的信息
 			if(infos.length == ProjectStructure.fourth_author_f-3){
 				infos[authorNameIndex] = infos[authorNameIndex].replaceAll("\\d$", "").replaceAll("^\\)", "");
 				keyOut.set(infos[authorNameIndex] + "\t" + infos[ProjectStructure.unit]);
 				valueOut.set(StringUtils.join(infos, "\t"));
 				context.write(keyOut, value);
 			}
+			// expert文件
+			// key为专家名+单位名，value为专家单位
 			if(infos.length == ExpertStructure.totalNum){
 				keyOut.set(infos[ExpertStructure.name] + "\t" + infos[ExpertStructure.unit]);
 				valueOut.set(infos[ExpertStructure.unit]);
 				context.write(keyOut, valueOut);
 			}
+			// 上述两个判断均将key设置为专家名+单位名
+			// 只是value不相同，
 		}
 	}
 	
@@ -83,6 +91,7 @@ public class Step2 {
 			if(key.toString().split("\t")[1].equals("null")){
 				for(Text value:values){
 					String[] infos = value.toString().split("\t");
+					// 读取的是上一步产生的信息
 					if(infos.length == ProjectStructure.fourth_author_f-3){
 						keyOut.set(StringUtils.join(infos, "\t"));
 						context.write(keyOut, NullWritable.get());
@@ -93,9 +102,11 @@ public class Step2 {
 				List<String[]> resultList = new ArrayList<String[]>();
 				for(Text value:values){
 					String[] infos = value.toString().split("\t");
+					// 读取的是expert表的信息，表明在expert表中存在该专家
 					if(infos.length == 1){
 						unit = infos[0];
 					}
+
 					if(infos.length == ProjectStructure.fourth_author_f-3){
 						resultList.add(infos);
 					}

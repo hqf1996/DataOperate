@@ -1,14 +1,13 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-
+import com.structure.ExpertStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.structure.ExpertStructure;
+import java.io.IOException;
 
 /**
  * 提取出新增的专家
@@ -24,9 +23,13 @@ public class Step8 {
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
 			String[] infos = value.toString().split("\t");
+			// 如果是step4输出的文件
+			// expertId、expertName、expertUnit、projectId、projectName、
+			// expertRole、source
 			if(infos.length == 7){
 				context.write(new Text(infos[0]), new Text(infos[0] + "\t" + infos[1] + "\t" + infos[2] + "\t" + infos[6]));
 			}
+			// 如果是expert表，
 			if(infos.length == ExpertStructure.totalNum){
 				context.write(new Text(infos[ExpertStructure.EXPERT_ID]), new Text(infos[ExpertStructure.EXPERT_ID]));
 			}
@@ -45,13 +48,14 @@ public class Step8 {
 				if(infos.length == 4){
 					addInfos = infos;
 				}
+				// 说明expert存在该专家，
 				if(infos.length == 1){
 					flag = false;
 					break;
 				}
 			}
 			if(addInfos != null && flag){ //已经在专家表中的元素不再输出
-				String[] result = new String[51];
+				String[] result = new String[52];
 				for(int i= 0;i<result.length;i++){
 					result[i] = "null";
 				} 

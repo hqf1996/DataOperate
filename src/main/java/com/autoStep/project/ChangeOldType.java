@@ -1,17 +1,16 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.structure.ProjectStructure;
+import com.util.Util;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.structure.ProjectStructure;
-import com.util.Util;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 替换老的项目表中的类型
@@ -53,7 +52,7 @@ public class ChangeOldType {
 			String[] infos = value.toString().split("\t");
 			//未归的浙江省级项目
 			if(infos[ProjectStructure.project_type_more].equals("333000")){
-				System.out.print("change brfore :" + infos[ProjectStructure.PROJECT_ID] + "\t" + 
+				System.out.print("change brfore :" + infos[ProjectStructure.PROJECT_ID] + "\t" +
 						infos[ProjectStructure.name] + "\t" + infos[ProjectStructure.type] + "\t" + infos[ProjectStructure.project_type_more]);
 				for(String[] typeInfo:ZJtypeList){
 					if(typeInfo[1].equals(infos[ProjectStructure.type])){
@@ -61,10 +60,10 @@ public class ChangeOldType {
 						infos[ProjectStructure.project_type_more] = typeInfo[3];
 					}
 				}
-				System.out.println("\t\tchange after :" + infos[ProjectStructure.PROJECT_ID] + "\t" + 
+				System.out.println("\t\tchange after :" + infos[ProjectStructure.PROJECT_ID] + "\t" +
 						infos[ProjectStructure.name] + "\t" + infos[ProjectStructure.type] + "\t" + infos[ProjectStructure.project_type_more]);
 			}else if (infos[ProjectStructure.project_type_more].equals("5")) {
-				System.out.print("change brfore :" + infos[ProjectStructure.PROJECT_ID] + "\t" + 
+				System.out.print("change brfore :" + infos[ProjectStructure.PROJECT_ID] + "\t" +
 						infos[ProjectStructure.name] + "\t" + infos[ProjectStructure.type] + "\t" + infos[ProjectStructure.project_type_more]);
 				String newType = getTypeStr(infos[ProjectStructure.url], infos[ProjectStructure.name], infos[ProjectStructure.type]);
 				if(!newType.equals(infos[ProjectStructure.type])){
@@ -75,7 +74,7 @@ public class ChangeOldType {
 					infos[ProjectStructure.project_type_more] = "605";
 				}
 				infos[ProjectStructure.project_type] = infos[ProjectStructure.project_type_more].substring(0, 1);
-				System.out.println("\t\tchange after :" + infos[ProjectStructure.PROJECT_ID] + "\t" + 
+				System.out.println("\t\tchange after :" + infos[ProjectStructure.PROJECT_ID] + "\t" +
 						infos[ProjectStructure.name] + "\t" + infos[ProjectStructure.type] + "\t" + infos[ProjectStructure.project_type_more]);
 			}
 			outKey.set(StringUtils.join(infos, "\t"));

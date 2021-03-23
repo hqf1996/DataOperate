@@ -1,15 +1,14 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.Arrays;
-
+import com.structure.ProjectStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.structure.ProjectStructure;
+import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * step5 在项目字段最后添加专家的id
@@ -24,9 +23,11 @@ public class Step5 {
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
 			String[] infos = value.toString().split("\t");
+			// 读取的是step4产生的信息
 			if(infos.length == 7){
 				context.write(new Text(infos[3]), value);
 			}
+			// 读取的是step2产生的信息
 			if(infos.length >= ProjectStructure.totalNum){
 				context.write(new Text(infos[ProjectStructure.PROJECT_ID]), value);
 			}
@@ -43,6 +44,7 @@ public class Step5 {
 			String[] expertIds = {"null", "null", "null", "null"};
 			for(Text value:values){
 				String[] infos = value.toString().split("\t");
+				// 从step4输出文件中读取expertId
 				if(infos.length == 7){
 					int expertRole = Integer.parseInt(infos[5]);
 					expertIds[expertRole-1] = infos[0]; 
@@ -55,6 +57,7 @@ public class Step5 {
 				if(projectInfos.length < (ProjectStructure.fourth_author_f+1)){
 					projectInfos = Arrays.copyOf(projectInfos, ProjectStructure.fourth_author_f+1);
 				}
+				// 添加expertId
 				for(int i = 0;i<expertIds.length;i++){
 					projectInfos[ProjectStructure.first_author_f+i] = expertIds[i];
 				}

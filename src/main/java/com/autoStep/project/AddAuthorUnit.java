@@ -1,17 +1,16 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.structure.ExpertStructure;
+import com.structure.ProjectStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.structure.ExpertStructure;
-import com.structure.ProjectStructure;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddAuthorUnit {
 	public static class AddAuthorUnitMap extends Mapper<Object, Text, Text, Text>{

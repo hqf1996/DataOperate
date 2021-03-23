@@ -1,15 +1,14 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.UUID;
-
+import com.structure.ProjectStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.structure.ProjectStructure;
+import java.io.IOException;
+import java.util.UUID;
 
 /**
  * 增加的新数据,和原来的项目数据去重,添加uuid
@@ -41,6 +40,8 @@ public class Step1Add {
 			// TODO Auto-generated method stub
 			boolean isNewData = true;
 			String[] result = null;
+			// 判断是否为新的数据
+			// 新数据和之前的数据长度不一样，
 			for(Text value:values){
 				String[] infos = value.toString().split("\t");
 				if(infos.length == (ProjectStructure.fourth_author_f+1)){
@@ -51,7 +52,8 @@ public class Step1Add {
 					result = infos;
 				}
 			}
-			if(isNewData && result != null){
+			// 当为新数据时，写文件，不是新数据，直接退出
+			if(isNewData && result != null ){
 				result[ProjectStructure.PROJECT_ID] = UUID.randomUUID().toString();
 				outKey.set(StringUtils.join(result, "\t"));
 				context.write(outKey, NullWritable.get());

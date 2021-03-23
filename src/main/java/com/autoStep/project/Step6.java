@@ -1,13 +1,12 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-
+import com.structure.ProjectStructure;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.structure.ProjectStructure;
+import java.io.IOException;
 
 /**
  * 提取出增加的项目
@@ -24,13 +23,14 @@ public class Step6 {
 				4096, 4096, 255, 255, 255, 255, 255, 255, 255, 50,
 				10, 10, 10};
 		Text outKey = new Text();
+		// 处理下数据长度，当超出限制时进行截取
 		@Override
 		protected void map(Object key, Text value, Mapper<Object, Text, Text, NullWritable>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
 			String[] infos = value.toString().split("\t");
 			String[] result = new String[ProjectStructure.totalNum];
-			for(int i=0;i<ProjectStructure.totalNum;i++){
+			for(int i = 0; i< ProjectStructure.totalNum; i++){
 				if(infos[i].length() > lengthLimit[i]){
 					result[i] = infos[i].substring(0, lengthLimit[i]);
 				}else {

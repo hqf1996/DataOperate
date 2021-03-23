@@ -1,18 +1,17 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.Map;
-
+import com.structure.ProjectStructure;
+import com.util.Util;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.structure.ProjectStructure;
-import com.util.Util;
+import java.io.IOException;
+import java.util.Map;
 
 /**
  * step3 提取出专家的名字和单位
- * 输入 step3
+ * 输入 step2，输出step3
  * @author yhj
  */
 public class Step3 {
@@ -25,6 +24,8 @@ public class Step3 {
 			// TODO Auto-generated method stub
 			universityNameMap = Util.getMapFromDir("university_change_name", "'", 0, 1);
 		}
+		// 提取出expertName、expertUnit、projectId、projectName、expertRole、source信息
+		// 作为这一步的输出信息
 		@Override
 		protected void map(Object key, Text value, Mapper<Object, Text, Text, NullWritable>.Context context)
 				throws IOException, InterruptedException {
@@ -38,7 +39,7 @@ public class Step3 {
 			for(int i=0;i<4;i++){
 				String expertName = infos[ProjectStructure.leader + i*2];
 				String expertUnit = infos[ProjectStructure.leader + i*2 + 1];
-				String expertRankCode = infos[ProjectStructure.first_author_rank_code + i];  
+				String expertRankCode = infos[ProjectStructure.first_author_rank_code + i];
 				int expertRole = i+1;
 				if(!expertName.equals("null")){
 					if(i == 0){ //如果是第一作者

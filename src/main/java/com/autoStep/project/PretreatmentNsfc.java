@@ -1,9 +1,12 @@
 package com.autoStep.project;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-
+import com.structure.ProjectStructure;
+import com.structure.UnitCityCodeMapStructure;
+import com.structure.UnitStructure;
+import com.structure.UniversityShortCallStructure;
+import com.unitProcess.UnitInfo;
+import com.unitProcess.UnitProcess;
+import com.util.Util;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
@@ -15,13 +18,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.structure.ProjectStructure;
-import com.structure.UnitCityCodeMapStructure;
-import com.structure.UnitStructure;
-import com.structure.UniversityShortCallStructure;
-import com.unitProcess.UnitInfo;
-import com.unitProcess.UnitProcess;
-import com.util.Util;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 杰青优青的项目数据预处理
@@ -67,7 +66,7 @@ public class PretreatmentNsfc {
 			}
 			if(filePath.indexOf("data") != -1 && infos.length > 7){
 				String[] projectInfos = new String[ProjectStructure.totalNum];
-				for(int i = 0;i<ProjectStructure.totalNum;i++){
+				for(int i = 0; i< ProjectStructure.totalNum; i++){
 					projectInfos[i] = "null";
 				}
 				projectInfos[ProjectStructure.name] = infos[1];
@@ -217,7 +216,7 @@ public class PretreatmentNsfc {
 					result[ProjectStructure.abstract_ch] = htmlInfos[1];
 					result[ProjectStructure.abstract_en] = htmlInfos[2];
 					result[ProjectStructure.keywords_en] = htmlInfos[4];
-					result[ProjectStructure.url] = htmlInfos[5];	
+					result[ProjectStructure.url] = htmlInfos[5];
 				}
 				for(int i = 0;i<result.length;i++){ //去除字段前后的空格
 					result[i] = result[i].trim();
